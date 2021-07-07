@@ -4,7 +4,7 @@ body{
     font-family: 'Roboto Mono', monospace;
 }
 
-.library{
+.library, #library{
   width: 90%;
   max-width: 1240px;
   margin: 0 auto;
@@ -34,7 +34,7 @@ body{
 
 
 label,
-#button{
+#button, .item{
      margin-top: 24px;
 }
 

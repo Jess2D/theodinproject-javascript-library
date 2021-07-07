@@ -30,10 +30,12 @@ function showLibrary(){
     console.log(Library)
     document.getElementById("library").innerHTML= Library.map(book => 
          `<div class="card">
-                  <div>Title: ${book.title}</div>
-                  <div>Author: ${book.author}</div>
-                  <div>Pages: ${book.pages}</div>
-                  <div>Read: ${book.read}</div>
+            <div class="card-body">
+                  <div class="item">Title: ${book.title}</div>
+                  <div class="item">Author: ${book.author}</div>
+                  <div class="item">Pages: ${book.pages}</div>
+                  <div class="item">Read: ${book.read}</div>
+            </div>
          </div>`
     ).join('')
 
