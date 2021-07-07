@@ -31,10 +31,11 @@ function showLibrary(){
     document.getElementById("library").innerHTML= Library.map(book => 
          `<div class="card">
             <div class="card-body">
-                  <div class="item">Title: ${book.title}</div>
-                  <div class="item">Author: ${book.author}</div>
-                  <div class="item">Pages: ${book.pages}</div>
-                  <div class="item">Read: ${book.read}</div>
+                  <div class="item" id="title">Title: ${book.title}</div>
+                  <div class="item" id="author">Author: ${book.author}</div>
+                  <div class="item" id="pages">Pages: ${book.pages}</div>
+                  <div class="item" id="read">Read: ${book.read}</div>
+                  <button id="buttond" onclick="delBookToLibrary(${book.author,book.title,book.pages, book.read})">Delete book</button>
             </div>
          </div>`
     ).join('')
@@ -48,6 +49,16 @@ function showLibrary(){
     }
         )
 
+}
+
+function delBookToLibrary(author, title, pages, read){
+    author = document.getElementById("author").value
+    title = document.getElementById("title").value
+    pages = document.getElementById("pages").value
+    read = document.getElementById("read").value
+    const book = new Book(author, title, pages, read)
+    Library.pop(book); 
+    showLibrary();
 }
 
 window.onload = showLibrary();

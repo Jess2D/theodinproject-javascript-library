@@ -49,10 +49,25 @@ label,
     border-radius: 2px;
     font-weight: 600;
     font-size: 24px;
+    margin-top: 13px;
 }
 
-#button:hover {
+#button:hover, #buttond:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+#buttond{
+    background-color: #FE7295;
+    padding: 14px 40px;
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: #FEFAF9;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 .card-tittle{
