@@ -96,6 +96,7 @@ function newBook() {
     Library.push(book);
     console.log(Library);
     showLibrary();
+    newBook();
   }
 
 function delBookToLibrary(author, title, pages, read) {
