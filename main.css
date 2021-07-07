@@ -4,13 +4,18 @@ body{
     font-family: 'Roboto Mono', monospace;
 }
 
-.library, #library{
-  width: 90%;
-  max-width: 1240px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
+.box{
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: right;
+
+}
+
+#library{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -19,8 +24,6 @@ body{
     color: #444;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
-    flex-direction:column;
-    min-height: 100%;
     margin: 12px; 
     padding: 12px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
