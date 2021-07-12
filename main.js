@@ -20,33 +20,33 @@ const Library = [
     author: "Stephen Covey",
     title: "The 7 Habits of Highly Effective People",
     pages: "300",
-    read: "5",
+    read: true,
   },
-  { author: "BJ Fogg", title: "Tiny Habits", pages: "274", read: "21" },
+  { author: "BJ Fogg", title: "Tiny Habits", pages: "274", read: true },
   {
     author: "Robert Greene",
     title: "The 48 Laws of Power",
     pages: "471",
-    read: "1",
+    read: true,
   },
   {
     author: "Amy Morin",
     title: "13 Things Mentally Strong People Don’t Do",
     pages: "274",
-    read: "20",
+    read: false,
   },
   {
     author: "Mark Manson",
     title:
       "The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living",
-    pages: "416",
-    read: "300",
+    pages: "200",
+    read: false,
   },
   {
     author: "Mark Manson",
     title: "The Subtle Art of Not Giving a F*ck",
     pages: "224",
-    read: "32",
+    read: false,
   },
 ];
 
@@ -64,7 +64,7 @@ function showLibrary() {
                 <div class="item" id="title">Title: ${book.title}</div>
                 <div class="item" id="author">Author: ${book.author}</div>
                 <div class="item" id="pages">Pages: ${book.pages}</div>
-                <div class="item" id="read">Read: ${book.read}</div>
+                <div class="item" id="read" value="${book.read}">Read: ${this.isRead(book)}</div>
                 <button id="buttond" onclick="delBookFromLibrary(${Library.indexOf(book)})">Delete book</button>
           </div>
        </div>`
@@ -88,7 +88,7 @@ function newBook() {
                   <label for="pages">Pages:</label>
                   <input type="text" id="pages" name="pages">
                   <label for="read">Read:</label>
-                  <input type="text" id="read" name="read">
+                  <input  type="checkbox" id="read" name="read">
                   <button id="button" onclick="addBookToLibrary(title)">Add</button>
       </div>  
       `;
@@ -122,6 +122,13 @@ function delBookFromLibrary(book) {
   const index = document.getElementById(book).getAttribute("id")
   Library.splice(index,1)
   showLibrary();
+}
+
+function isRead(book){
+  if (book.read == true)
+    return "Read"
+    else
+    return "Not Read"
 }
 
 window.onload = showLibrary();
