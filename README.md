@@ -8,7 +8,7 @@ This is The Odin Project's [curriculum](https://www.theodinproject.com/courses/j
 Create a library where books are stored in a Array of objects
 
 ## Screenshot
-![Settings Window]https://github.com/Jess2D/theodinproject-javascript-library/blob/master/img/Screenshot.PNG
+![Settings Window](https://github.com/Jess2D/theodinproject-javascript-library/blob/master/img/Screenshot.PNG)
 
 ## Acknowledgments
 - Display Flex (CSS3)
