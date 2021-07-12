@@ -1,4 +1,4 @@
-# The Library Project
+# The Library Project 🦄 
 
 This is The Odin Project's [curriculum](https://www.theodinproject.com/courses/javascript/lessons/library) from Full Stack Javascript Path
 
@@ -6,6 +6,9 @@ This is The Odin Project's [curriculum](https://www.theodinproject.com/courses/j
 
 ## Assignment
 Create a library where books are stored in a Array of objects
+
+## Screenshot
+![Settings Window]https://github.com/Jess2D/theodinproject-javascript-library/blob/master/img/Screenshot.PNG
 
 ## Acknowledgments
 - Display Flex (CSS3)
@@ -15,5 +18,6 @@ Create a library where books are stored in a Array of objects
 
 ## Ideas to extend the project
 - Add persistence to this library app using the Web Storage API [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
+
 
 
