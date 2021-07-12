@@ -1,3 +1,11 @@
+/**
+* @description Represents a book
+* @constructor
+* @param {string} author - The author of the book
+* @param {string} title - The title of the book
+* @param {number} pages - The pages of the book
+* @param {number} read - The read pages of the book
+*/
 function Book(author, title, pages, read) {
   this.author = author;
   this.title = title;
@@ -43,6 +51,9 @@ const Library = [
 ];
 
 
+/**
+* @description Show The Library as array at browser. It is the main function of this project
+*/
 function showLibrary() {
   console.log(Library);
   document.getElementById("library").innerHTML =
@@ -61,6 +72,10 @@ function showLibrary() {
 
 }
 
+
+/**
+* @description Adds a new Book to the html code
+*/
 function newBook() {
     document.getElementById("newBook").innerHTML = `
           <div class="card">
@@ -80,8 +95,14 @@ function newBook() {
     
   }
 
-
-  function addBookToLibrary(author, title, pages, read) {
+/**
+* @description Adds a new book to the Library Array
+* @param {string} author
+* @param {string} title
+* @param {number} pages
+* @param {number} read
+*/
+function addBookToLibrary(author, title, pages, read) {
     author = document.getElementById("author").value;
     title = document.getElementById("title").value;
     pages = document.getElementById("pages").value;
@@ -93,6 +114,10 @@ function newBook() {
     newBook();
   }
 
+/**
+* @description Delete book from the array Library by the index of the book
+* @param {number} book
+*/
 function delBookFromLibrary(book) {
   const index = document.getElementById(book).getAttribute("id")
   Library.splice(index,1)
