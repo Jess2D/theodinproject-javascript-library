@@ -85,4 +85,6 @@ h1{
 input {
     padding: 12px;
     color: #3AF7D1;
+    font-weight: 800;
+    font-size: 24px;;
 }

@@ -5,8 +5,10 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
+let del; 
+
 const Library = [
-  {
+  { 
     author: "Stephen Covey",
     title: "The 7 Habits of Highly Effective People",
     pages: "300",
@@ -46,25 +48,17 @@ function showLibrary() {
   document.getElementById("library").innerHTML =
     Library.map(
       (book) =>
-        `<div class="card">
-            <div class="card-body">
-                  <div class="item" id="title">Title: ${book.title}</div>
-                  <div class="item" id="author">Author: ${book.author}</div>
-                  <div class="item" id="pages">Pages: ${book.pages}</div>
-                  <div class="item" id="read">Read: ${book.read}</div>
-                  <button id="buttond" onclick="delBookToLibrary(${
-                    (book.author, book.title, book.pages, book.read)
-                  })">Delete book</button>
-            </div>
-         </div>`
-    ).join("");
+      `<div class="card"  id="${Library.indexOf(book)}">
+          <div class="card-body">
+                <div class="item" id="title">Title: ${book.title}</div>
+                <div class="item" id="author">Author: ${book.author}</div>
+                <div class="item" id="pages">Pages: ${book.pages}</div>
+                <div class="item" id="read">Read: ${book.read}</div>
+                <button id="buttond" onclick="delBookFromLibrary(${Library.indexOf(book)})">Delete book</button>
+          </div>
+       </div>`
+  ).join("");
 
-  Library.map((book) => {
-    console.log(book);
-    console.log(book.title);
-    console.log(book.pages);
-    console.log(book.read);
-  });
 }
 
 function newBook() {
@@ -80,32 +74,28 @@ function newBook() {
                   <input type="text" id="pages" name="pages">
                   <label for="read">Read:</label>
                   <input type="text" id="read" name="read">
-                  <button id="button" onclick="adBookToLibrary(title)">Add</button>
+                  <button id="button" onclick="addBookToLibrary(title)">Add</button>
       </div>  
       `;
     
   }
 
 
-  function adBookToLibrary(author, title, pages, read) {
+  function addBookToLibrary(author, title, pages, read) {
     author = document.getElementById("author").value;
     title = document.getElementById("title").value;
     pages = document.getElementById("pages").value;
     read = document.getElementById("read").value;
     const book = new Book(author, title, pages, read);
-    Library.push(book);
+    Library.unshift(book);
     console.log(Library);
     showLibrary();
     newBook();
   }
 
-function delBookToLibrary(author, title, pages, read) {
-  author = document.getElementById("author").value;
-  title = document.getElementById("title").value;
-  pages = document.getElementById("pages").value;
-  read = document.getElementById("read").value;
-  const book = new Book(author, title, pages, read);
-  Library.pop(book);
+function delBookFromLibrary(book) {
+  const index = document.getElementById(book).getAttribute("id")
+  Library.splice(index,1)
   showLibrary();
 }
 
